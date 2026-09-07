@@ -26,7 +26,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.2 }}
-          className="shrink-0 text-emerald-600 p-1 rounded-full bg-emerald-50"
+          className="shrink-0 text-[#0D333C] p-1 rounded-full bg-[#0D333C]/10"
         >
           <ChevronDown className="w-5 h-5" />
         </motion.div>

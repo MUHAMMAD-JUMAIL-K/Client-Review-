@@ -32,12 +32,12 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   const variantStyles = {
-    primary: 'bg-emerald-600 hover:bg-emerald-700 text-white shadow-md shadow-emerald-600/20 focus:ring-emerald-500',
-    secondary: 'bg-slate-900 hover:bg-slate-800 text-white shadow-sm focus:ring-slate-900',
-    outline: 'border border-slate-300 hover:bg-slate-100 text-slate-700 focus:ring-slate-400 bg-white',
-    ghost: 'text-slate-600 hover:bg-slate-100 focus:ring-slate-400',
+    primary: 'bg-[#0D333C] hover:bg-[#164954] text-white shadow-md shadow-[#0D333C]/25 focus:ring-[#0D333C]',
+    secondary: 'bg-[#164954] hover:bg-[#0D333C] text-white shadow-sm focus:ring-[#164954]',
+    outline: 'border border-[#0D333C]/30 hover:bg-[#0D333C]/5 text-[#102A30] focus:ring-[#0D333C] bg-white',
+    ghost: 'text-[#102A30] hover:bg-[#0D333C]/10 focus:ring-[#0D333C]',
     danger: 'bg-rose-600 hover:bg-rose-700 text-white focus:ring-rose-500',
-    success: 'bg-emerald-500 hover:bg-emerald-600 text-white focus:ring-emerald-500',
+    success: 'bg-[#0D333C] hover:bg-[#164954] text-white focus:ring-[#0D333C]',
   };
 
   const buttonStyle: React.CSSProperties = { ...style };

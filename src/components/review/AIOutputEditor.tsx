@@ -81,7 +81,7 @@ export const AIOutputEditor: React.FC<AIOutputEditorProps> = ({
                     onClick={() => onToneChange(t)}
                     className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all ${
                       currentTone === t
-                        ? 'bg-emerald-600 text-white shadow-xs'
+                        ? 'bg-[#0B2C33] text-white shadow-xs'
                         : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
                     }`}
                   >
@@ -102,7 +102,7 @@ export const AIOutputEditor: React.FC<AIOutputEditorProps> = ({
                     onClick={() => onLengthChange(l)}
                     className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all ${
                       currentLength === l
-                        ? 'bg-emerald-600 text-white shadow-xs'
+                        ? 'bg-[#0B2C33] text-white shadow-xs'
                         : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
                     }`}
                   >

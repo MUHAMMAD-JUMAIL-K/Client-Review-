@@ -43,7 +43,7 @@ export const OwnReviewForm: React.FC<OwnReviewFormProps> = ({
               if (showPromptChoice) setShowPromptChoice(false);
             }}
             placeholder={`Which service did you use?\nWhat did you like about the project?\nHow was the team & delivery?\nWhat stood out to you?`}
-            className="w-full bg-white border border-slate-200 rounded-2xl p-3.5 sm:p-4 pb-8 text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 transition-all resize-none"
+            className="w-full bg-white border border-slate-200 rounded-2xl p-3.5 sm:p-4 pb-8 text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0D333C]/20 focus:border-[#0D333C] transition-all resize-none"
           />
           <div className="absolute bottom-2.5 right-3 text-[10px] sm:text-[11px] font-mono text-slate-400 pointer-events-none bg-white/90 px-1 py-0.5 rounded">
             {text.length}/{MAX_CHARS}
@@ -63,9 +63,9 @@ export const OwnReviewForm: React.FC<OwnReviewFormProps> = ({
           Continue
         </Button>
       ) : (
-        <div className="p-4 bg-emerald-50/80 border border-emerald-200 rounded-2xl space-y-3 animate-fadeIn text-center">
-          <p className="text-xs font-bold text-emerald-900 flex items-center justify-center gap-1.5">
-            <Sparkles className="w-4 h-4 text-emerald-600" />
+        <div className="p-4 bg-[#0D333C]/5 border border-[#0D333C]/20 rounded-2xl space-y-3 animate-fadeIn text-center">
+          <p className="text-xs font-bold text-[#102A30] flex items-center justify-center gap-1.5">
+            <Sparkles className="w-4 h-4 text-[#0D333C]" />
             <span>Would you like help improving the wording?</span>
           </p>
 

@@ -23,7 +23,7 @@ export const Privacy: React.FC = () => {
           <div className="space-y-2">
             <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider">1. Architecture & Privacy First</h2>
             <p>
-              REVORA is built as a static application with URL-encoded parameters and browser local storage. We do not maintain a central database of customer reviews or personal identifiers.
+              Alpha Tech Business Solutions Review Portal is built as a static application with URL-encoded parameters and browser local storage. We do not maintain a central database of customer reviews or personal identifiers.
             </p>
           </div>
 
@@ -37,14 +37,14 @@ export const Privacy: React.FC = () => {
           <div className="space-y-2">
             <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider">3. Local Storage</h2>
             <p>
-              Campaign configurations created on REVORA are stored locally in your web browser under the `revora_` namespace. You can clear this data at any time via the Dashboard.
+              Campaign configurations created on the portal are stored locally in your web browser under the `alphatech_` namespace. You can clear this data at any time via your browser settings.
             </p>
           </div>
 
           <div className="space-y-2">
             <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider">4. External Destinations</h2>
             <p>
-              REVORA connects customers to third-party destinations (Google Maps / Google Write-Review). Google's standard privacy policies apply when customers interact with Google Maps.
+              Alpha Tech Business Solutions Review Portal connects customers to third-party destinations (Google Maps / Google Write-Review). Google's standard privacy policies apply when customers interact with Google Maps.
             </p>
           </div>
         </Card>

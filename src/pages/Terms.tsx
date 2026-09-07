@@ -23,21 +23,21 @@ export const Terms: React.FC = () => {
           <div className="space-y-2">
             <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider">1. Acceptable Use</h2>
             <p>
-              REVORA is provided to assist customers in preparing genuine, honest reviews. You agree not to use REVORA to generate spam, defamatory content, or automated fake review campaigns.
+              Alpha Tech Business Solutions Review Portal is provided to assist clients in preparing genuine, honest project feedback and reviews. You agree not to use this portal to generate spam, defamatory content, or automated fake review campaigns.
             </p>
           </div>
 
           <div className="space-y-2">
             <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider">2. Customer Responsibility</h2>
             <p>
-              The customer remains the sole author and owner of their submitted review. Customers retain final approval of all text copied to their clipboard and submitted to Google.
+              The client remains the sole author and owner of their submitted review. Clients retain final approval of all text copied to their clipboard and submitted to Google.
             </p>
           </div>
 
           <div className="space-y-2">
             <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider">3. Google Platform Policies</h2>
             <p>
-              REVORA explicitly complies with Google Review Policies. We do not guarantee Google will accept or retain any specific review, as Google applies its own automated review algorithms and moderation rules.
+              Alpha Tech Business Solutions explicitly complies with Google Review Policies. We do not guarantee Google will accept or retain any specific review, as Google applies its own automated review algorithms and moderation rules.
             </p>
           </div>
         </Card>

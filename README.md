@@ -1,10 +1,8 @@
-# Revora 🚀
+# Alpha Tech Business Solutions — Client Review & Feedback Portal 🚀
 
-> **Mobile-First Customer Review Assistant** — Turn real experiences into better, high-converting customer reviews with zero-hallucination AI.
+> **Client Experience & Review Portal** — Designed for [Alpha Tech Business Solutions](https://www.alphatechbusinesssolutions.com/) to capture authentic client feedback across Enterprise Software, ERP Systems, Mobile Apps, Jewelry Retail Solutions, and IT Infrastructure.
 
-![Revora Banner](public/revora-banner.png)
-
-Revora is a privacy-focused, policy-compliant web application designed to help local businesses collect authentic, high-quality customer reviews. By offering a guided mobile-first feedback experience powered by strictly grounded AI, Revora transforms quick customer thoughts into articulate, detailed reviews for platforms like **Google Business Profile**.
+Alpha Tech Client Review Portal is a privacy-focused, policy-compliant web application engineered specifically for **Alpha Tech Business Solutions** (`alphatechbusinesssolutions.com`). By offering a guided mobile-first feedback experience powered by strictly grounded, zero-hallucination AI, it transforms client feedback into articulate, detailed reviews for Google Business Profile and official channels.
 
 ---
 
@@ -41,8 +39,8 @@ Ensure you have [Node.js](https://nodejs.org/) (v18 or higher) installed on your
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/revora.git
-   cd revora
+   git clone https://github.com/your-username/alpha-tech-review-portal.git
+   cd alpha-tech-review-portal
    ```
 
 2. **Install dependencies**:
@@ -77,7 +75,7 @@ Ensure you have [Node.js](https://nodejs.org/) (v18 or higher) installed on your
 
 1. **Zero Hallucination Guarantee**: The AI assistant only rephrases user-selected tokens and notes. It never adds unmentioned facts, services, or fake praise.
 2. **Privacy First**: Customer feedback remains client-side or processed ephemerally without persistent user tracking.
-3. **Google Review Policy Compliance**: Revora does not perform review gating or filter negative feedback, adhering strictly to platform developer & review guidelines.
+3. **Google Review Policy Compliance**: Alpha Tech Portal does not perform review gating or filter negative feedback, adhering strictly to platform developer & review guidelines.
 
 ---
 

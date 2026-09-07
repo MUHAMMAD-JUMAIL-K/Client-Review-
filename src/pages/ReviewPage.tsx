@@ -183,7 +183,7 @@ export const ReviewPage: React.FC = () => {
           </p>
           <div className="pt-2">
             <Link to="/">
-              <Button variant="outline" size="sm">Go to REVORA Home</Button>
+              <Button variant="outline" size="sm">Go to Alpha Tech Home</Button>
             </Link>
           </div>
         </Card>
@@ -198,14 +198,17 @@ export const ReviewPage: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-slate-100 py-6 sm:py-12 px-4 flex flex-col justify-between items-center selection:bg-emerald-500 selection:text-white">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-slate-100/90 to-slate-100 py-6 sm:py-12 px-4 flex flex-col justify-between items-center relative overflow-hidden selection:bg-emerald-500 selection:text-white">
+      {/* Ambient Background Radial Glows */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-gradient-to-b from-[#0D333C]/12 via-[#164954]/8 to-[#C9A84E]/10 blur-[130px] rounded-full pointer-events-none" />
+
       {/* Mobile-First Container (Max Width 480px) */}
-      <div className="w-full max-w-[480px] space-y-6 my-auto">
+      <div className="w-full max-w-[480px] space-y-6 my-auto relative z-10">
         {/* Customer Header */}
         <CustomerHeader campaign={campaign} />
 
         {/* Core Review Step Card */}
-        <Card className="shadow-lg shadow-slate-200/80 p-4 sm:p-7 space-y-5 sm:space-y-6 relative overflow-hidden bg-white">
+        <Card className="shadow-2xl shadow-slate-300/60 p-3.5 min-[380px]:p-5 sm:p-7 space-y-5 sm:space-y-6 relative overflow-hidden bg-white/95 backdrop-blur-md rounded-2xl min-[380px]:rounded-3xl border border-slate-200/90">
           {/* Back button if past initial step */}
           {step !== 'rating' && step !== 'final' && (
             <button
@@ -394,7 +397,7 @@ export const ReviewPage: React.FC = () => {
             <ShieldCheck className="w-3.5 h-3.5" />
             <span>Customer-controlled manual submission to Google</span>
           </div>
-          <p>Powered by REVORA Review Assistant</p>
+          <p>Powered by Alpha Tech Review Assistant</p>
         </div>
       </div>
 

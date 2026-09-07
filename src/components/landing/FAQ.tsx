@@ -4,28 +4,28 @@ import { AccordionItem } from '../ui/Accordion';
 export const FAQ: React.FC = () => {
   const faqs = [
     {
-      q: 'Does REVORA post reviews to Google?',
-      a: 'No. REVORA prepares your review, copies the text to your clipboard, and opens Google Maps. You choose your rating, paste your review, and submit it yourself.',
+      q: 'How does the Alpha Tech Client Review Portal work?',
+      a: 'This portal prepares client project feedback, refines sentence structure with AI, copies the finalized draft to your clipboard, and redirects directly to Alpha Tech Business Solutions Google Business page for manual submission.',
     },
     {
-      q: 'Can REVORA choose my stars?',
-      a: 'No. You always choose your own star rating (1–5 stars) based on your real experience.',
+      q: 'Do clients need an account or app installation?',
+      a: 'No. Clients simply tap the review link or scan the QR code on their mobile browser without downloading apps or creating accounts.',
     },
     {
-      q: 'Can AI create a fake review for me?',
-      a: "No. REVORA's AI assistant helps organize and improve wording for information you provide. It strictly will not invent experiences, services, people, dates, or false facts.",
+      q: 'Can the AI invent fake project details or praise?',
+      a: 'No. Alpha Tech\'s AI assistant strictly adheres to zero-hallucination policies. It only refines grammar and formatting for details provided directly by the client.',
     },
     {
-      q: 'Do customers need an account or app installation?',
-      a: 'No. Customers simply tap the link or scan your QR code on their phone browser without installing anything or signing up.',
+      q: 'Can clients choose their own star rating?',
+      a: 'Yes. Clients retain 100% control over their star rating (1–5 stars) and review text without default manipulation or gating.',
     },
     {
-      q: 'Is REVORA static?',
-      a: 'Yes! The main frontend is 100% static React and can be hosted anywhere (Vercel, Hostinger, Netlify, Cloudflare Pages). AI rewriting is handled securely through a small serverless API endpoint so your API keys remain 100% private.',
+      q: 'Is this portal compliant with Google Review Guidelines?',
+      a: 'Yes! It operates in full compliance with Google policies. Clients review their AI-polished draft and manually submit it to Google.',
     },
     {
-      q: 'How does campaign URL storage work without a database?',
-      a: 'Campaign settings (business name, logo URL, brand colors, Google link) are safely encoded into compressed URL parameters. You can generate unlimited review links with zero database setup!',
+      q: 'Which Alpha Tech services are supported in the review wizard?',
+      a: 'All Alpha Tech offerings including Web Development, Custom Software, Mobile App Development, Digital Marketing, AI Video Generation, Motion Video Generation, Poster Creation, and custom client services.',
     },
   ];
 
@@ -33,12 +33,12 @@ export const FAQ: React.FC = () => {
     <section id="faq" className="py-20 bg-slate-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 space-y-3">
-          <span className="text-xs font-extrabold uppercase tracking-wider text-emerald-600">Frequently Asked Questions</span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Got Questions? We Have Answers.
+          <span className="text-xs font-extrabold uppercase tracking-wider text-[#0D333C]">Frequently Asked Questions</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#102A30] tracking-tight">
+            Alpha Tech Client Review FAQs
           </h2>
           <p className="text-base text-slate-600">
-            Learn more about REVORA's policy compliance and architecture.
+            Learn more about Alpha Tech Business Solutions review portal and policy compliance.
           </p>
         </div>
 

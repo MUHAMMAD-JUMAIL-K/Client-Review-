@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Star, Sparkles, Copy, ExternalLink, Check, ShieldCheck } from 'lucide-react';
+import alphaTechLogo from '../../assets/alpha-tech-logo.png';
 
 export const InteractivePreview: React.FC = () => {
   const [stars, setStars] = useState<number>(5);
@@ -9,9 +10,9 @@ export const InteractivePreview: React.FC = () => {
   const [isImproving, setIsImproving] = useState(false);
 
   const sampleReviews = {
-    Natural: "I used Apex Studio for our company website redesign. The team was friendly, answered all our questions, and finished ahead of deadline. The new design looks clean and works well on mobile.",
-    Friendly: "Huge shoutout to Apex Studio for our fantastic new website! The team was super friendly, quick, and easy to work with. We love the fresh design!",
-    Professional: "Apex Studio delivered exceptional website development services. The team demonstrated professionalism, met all project milestones on schedule, and delivered a responsive, modern interface.",
+    Natural: "We hired Alpha Tech Business Solutions for our custom ERP software development. The team was highly professional, delivered on time, and automated our entire inventory workflow.",
+    Friendly: "Huge shoutout to Alpha Tech Business Solutions for building our mobile app & ERP system! The developers were quick, responsive, and fantastic to work with throughout the project.",
+    Professional: "Alpha Tech Business Solutions delivered exceptional enterprise software development. Their engineering team demonstrated deep technical expertise, meeting all project milestones on schedule.",
   };
 
   const handleImprove = () => {
@@ -38,16 +39,16 @@ export const InteractivePreview: React.FC = () => {
       <div className="bg-slate-50 p-5 min-h-[580px] flex flex-col justify-between text-left space-y-4">
         {/* Business Branding */}
         <div className="text-center pt-2">
-          <div className="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white font-extrabold text-xl shadow-md mb-2">
-            AS
-          </div>
-          <h3 className="font-bold text-base text-slate-900">Apex Web Studio</h3>
-          <p className="text-xs text-slate-500">San Francisco, CA</p>
+          <img
+            src={alphaTechLogo}
+            alt="Alpha Tech Business Solutions"
+            className="w-16 h-16 mx-auto rounded-2xl object-contain shadow-md mb-2 bg-[#0D333C] p-1"
+          />
         </div>
 
         {/* Welcome Message */}
         <div className="bg-white p-3.5 rounded-2xl border border-slate-200/80 shadow-sm text-center">
-          <p className="text-xs font-semibold text-slate-800">"How was your experience?"</p>
+          <p className="text-xs font-semibold text-slate-800">"How was your IT project experience?"</p>
           <p className="text-[11px] text-slate-500 mt-0.5">Your honest feedback matters to us.</p>
 
           {/* Interactive 5-Star Selector */}

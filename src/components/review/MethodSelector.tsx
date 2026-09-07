@@ -29,7 +29,7 @@ export const MethodSelector: React.FC<MethodSelectorProps> = ({
           <Card
             className={`h-full flex flex-col justify-between transition-all duration-200 cursor-pointer ${
               selectedMethod === 'own'
-                ? 'border-2 border-emerald-600 bg-emerald-50/40 shadow-md scale-[1.02]'
+                ? 'border-2 border-[#0B2C33] bg-[#0B2C33]/5 shadow-md scale-[1.02]'
                 : 'hover:border-slate-300 hover:bg-slate-50'
             }`}
             padding="sm"
@@ -55,13 +55,13 @@ export const MethodSelector: React.FC<MethodSelectorProps> = ({
           <Card
             className={`h-full flex flex-col justify-between transition-all duration-200 cursor-pointer ${
               selectedMethod === 'ai_wizard'
-                ? 'border-2 border-emerald-600 bg-emerald-50/40 shadow-md scale-[1.02]'
+                ? 'border-2 border-[#0B2C33] bg-[#0B2C33]/5 shadow-md scale-[1.02]'
                 : 'hover:border-slate-300 hover:bg-slate-50'
             }`}
             padding="sm"
           >
             <div className="space-y-2">
-              <div className="w-9 h-9 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-700">
+              <div className="w-9 h-9 rounded-xl bg-[#0B2C33]/10 flex items-center justify-center text-[#0B2C33]">
                 <Sparkles className="w-4 h-4" />
               </div>
               <h4 className="font-bold text-slate-900 text-sm">Help me write it</h4>

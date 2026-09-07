@@ -141,7 +141,7 @@ export const ManualGoogleModal: React.FC<ManualGoogleModalProps> = ({
 
           <div className="flex items-center justify-center gap-1.5 text-[11px] text-slate-500 pt-1 font-medium">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-            <span>REVORA never automates or submits Google reviews for you.</span>
+            <span>Alpha Tech Portal never automates or submits Google reviews for you.</span>
           </div>
         </div>
       </div>

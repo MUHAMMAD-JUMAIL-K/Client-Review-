@@ -14,10 +14,13 @@ export function encodeCampaign(campaign: Omit<CampaignData, 'version'> & { versi
     businessName: sanitizeString(campaign.businessName, 100),
     logoUrl: isValidPublicUrl(campaign.logoUrl) ? campaign.logoUrl?.trim() : undefined,
     location: campaign.location ? sanitizeString(campaign.location, 100) : undefined,
+    clientName: campaign.clientName ? sanitizeString(campaign.clientName, 100) : undefined,
+    clientCompany: campaign.clientCompany ? sanitizeString(campaign.clientCompany, 100) : undefined,
+    projectNotes: campaign.projectNotes ? sanitizeString(campaign.projectNotes, 200) : undefined,
     googleMapsUrl: campaign.googleMapsUrl?.trim() || '',
     googleReviewUrl: campaign.googleReviewUrl?.trim() || undefined,
     googlePlaceId: campaign.googlePlaceId?.trim() || undefined,
-    brandColor: isValidHexColor(campaign.brandColor) ? campaign.brandColor : '#059669',
+    brandColor: isValidHexColor(campaign.brandColor) ? campaign.brandColor : '#0D333C',
     welcomeMessage: sanitizeString(campaign.welcomeMessage || 'How was your experience?', 150),
     description: campaign.description ? sanitizeString(campaign.description, 250) : undefined,
     thankYouMessage: sanitizeString(campaign.thankYouMessage || 'Thank you for sharing your experience.', 200),
@@ -48,5 +51,5 @@ export function generateCampaignUrl(encodedData: string, origin?: string): strin
     return `${originUrl}${formattedBase}r/?data=${encodedData}`;
   }
 
-  return `https://revora.app${formattedBase}r/?data=${encodedData}`;
+  return `https://alphatechbusinesssolutions.com${formattedBase}r/?data=${encodedData}`;
 }

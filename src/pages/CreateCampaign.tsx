@@ -12,8 +12,8 @@ export const CreateCampaign: React.FC = () => {
   const [step, setStep] = useState<1 | 2>(1);
 
   // Form State
-  const [googleMapsUrl, setGoogleMapsUrl] = useState('');
-  const [googleReviewUrl, setGoogleReviewUrl] = useState<string | undefined>();
+  const [googleMapsUrl, setGoogleMapsUrl] = useState('https://g.page/r/CYCyiDazPsWzEBM/review');
+  const [googleReviewUrl, setGoogleReviewUrl] = useState<string | undefined>('https://g.page/r/CYCyiDazPsWzEBM/review');
   const [googlePlaceId, setGooglePlaceId] = useState<string | undefined>();
 
   const handleUrlSubmit = (url: string, reviewUrl?: string, placeId?: string) => {
@@ -27,6 +27,9 @@ export const CreateCampaign: React.FC = () => {
     businessName: string;
     logoUrl?: string;
     location?: string;
+    clientName?: string;
+    clientCompany?: string;
+    projectNotes?: string;
     brandColor: string;
     welcomeMessage: string;
     description?: string;
@@ -40,6 +43,9 @@ export const CreateCampaign: React.FC = () => {
       businessName: branding.businessName,
       logoUrl: branding.logoUrl,
       location: branding.location,
+      clientName: branding.clientName,
+      clientCompany: branding.clientCompany,
+      projectNotes: branding.projectNotes,
       googleMapsUrl,
       googleReviewUrl,
       googlePlaceId,
@@ -62,7 +68,7 @@ export const CreateCampaign: React.FC = () => {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Wizard Header & Progress Bar */}
         <div className="text-center space-y-3">
-          <span className="text-xs font-extrabold uppercase tracking-wider text-emerald-600">Review Link Generator</span>
+          <span className="text-xs font-extrabold uppercase tracking-wider text-[#0B2C33]">Review Link Generator</span>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             Create your shareable review link
           </h1>
@@ -73,9 +79,9 @@ export const CreateCampaign: React.FC = () => {
 
         {/* 3-Step Wizard Progress */}
         <div className="flex items-center justify-center gap-2 sm:gap-6 text-xs font-bold text-slate-500">
-          <div className={`flex items-center gap-2 ${step >= 1 ? 'text-emerald-700 font-extrabold' : ''}`}>
+          <div className={`flex items-center gap-2 ${step >= 1 ? 'text-[#0B2C33] font-extrabold' : ''}`}>
             <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs ${
-              step > 1 ? 'bg-emerald-600 text-white' : step === 1 ? 'bg-emerald-600 text-white ring-4 ring-emerald-100' : 'bg-slate-200 text-slate-600'
+              step > 1 ? 'bg-[#0B2C33] text-white' : step === 1 ? 'bg-[#0B2C33] text-white ring-4 ring-[#0B2C33]/20' : 'bg-slate-200 text-slate-600'
             }`}>
               {step > 1 ? <Check className="w-4 h-4" /> : '1'}
             </div>
@@ -84,9 +90,9 @@ export const CreateCampaign: React.FC = () => {
 
           <div className="w-8 h-0.5 bg-slate-300" />
 
-          <div className={`flex items-center gap-2 ${step >= 2 ? 'text-emerald-700 font-extrabold' : ''}`}>
+          <div className={`flex items-center gap-2 ${step >= 2 ? 'text-[#0B2C33] font-extrabold' : ''}`}>
             <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs ${
-              step === 2 ? 'bg-emerald-600 text-white ring-4 ring-emerald-100' : 'bg-slate-200 text-slate-600'
+              step === 2 ? 'bg-[#0B2C33] text-white ring-4 ring-[#0B2C33]/20' : 'bg-slate-200 text-slate-600'
             }`}>
               2
             </div>
@@ -115,13 +121,13 @@ export const CreateCampaign: React.FC = () => {
           ) : (
             <BrandingForm
               initialValues={{
-                businessName: '',
-                logoUrl: '',
-                location: '',
-                brandColor: '#059669',
-                welcomeMessage: 'How was your experience?',
-                description: 'Your honest feedback matters.',
-                thankYouMessage: 'Thank you for sharing your experience.',
+                businessName: 'Alpha Tech Business Solutions',
+                logoUrl: '/Alpha%20Tech%20Logo.png',
+                location: 'Ambalavayal Sulthanbathery, Wayanad, Kerala',
+                brandColor: '#0D333C',
+                welcomeMessage: 'How was your experience working with Alpha Tech Business Solutions?',
+                description: 'Your feedback helps us continuously elevate our IT software & enterprise solutions.',
+                thankYouMessage: 'Thank you for trusting Alpha Tech Business Solutions with your project!',
               }}
               onBack={() => setStep(1)}
               onSubmit={handleBrandingSubmit}

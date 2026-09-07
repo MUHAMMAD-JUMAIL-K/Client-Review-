@@ -21,94 +21,212 @@ const SERVICE_OPTIONS = [
 
 const SERVICE_LIKED_OPTIONS: Record<string, string[]> = {
   'Web Development': [
-    'Modern Responsive Layout',
-    'Fast Page Loading Speed',
-    'Clean & Elegant Design',
-    'SEO-Optimized Structure',
-    'Smooth User Navigation',
-    'Clear & Fast Communication',
+    'Modern Responsive UI/UX Design',
+    'Ultra-Fast Loading Speed',
+    'Secure & Scalable Architecture',
+    'Clean & Maintainable Code',
+    'SEO & Performance Optimization',
+    'Clear & Timely Communication',
   ],
   'Custom Software': [
-    'Robust & Scalable Code',
-    'Flawless Bug-Free Performance',
-    'Tailored Custom Workflow',
-    'Intuitive Admin Dashboard',
-    'Seamless API Integration',
+    'Tailored Enterprise Workflows',
+    'Seamless Database & API Integration',
+    'Robust Automation & Efficiency',
+    'High Reliability & Performance',
+    'Comprehensive Support & Docs',
     'On-Time Project Delivery',
   ],
   'Mobile App Development': [
-    'Smooth App Performance',
-    'Intuitive Mobile Interface',
-    'Fast Screen Loading',
-    'Great User Experience',
-    'Flawless Device Support',
-    'Responsive Support & Updates',
+    'Smooth iOS & Android Performance',
+    'Intuitive Mobile User Interface',
+    'Real-Time Push Notifications',
+    'Secure Offline & Cloud Sync',
+    'Fast Screen Load Times',
+    'Dedicated App Store Support',
   ],
   'Digital Marketing': [
-    'High Return on Ad Spend (ROI)',
-    'Targeted Audience Reach',
-    'Increase in Qualified Leads',
-    'Creative Campaign Strategy',
-    'Data-Driven Performance',
-    'Transparent Weekly Reports',
+    'High Return on Investment (ROI)',
+    'Targeted Ad Campaign Strategy',
+    'Increased Brand Engagement',
+    'Transparent Analytics & Reports',
+    'Consistent Brand Positioning',
+    'Creative Campaign Execution',
   ],
   'AI Video Generation': [
-    'Realistic AI Visuals',
-    'Ultra-Fast Video Rendering',
-    'High-Definition Output',
-    'Engaging Voiceovers & Scripts',
-    'Creative Storytelling',
-    'Cost-Effective Production',
+    'Ultra-Realistic AI Avatars & Voice',
+    'Rapid Video Production Turnaround',
+    'Engaging Script & Storytelling',
+    'High-Definition Visual Output',
+    'Multi-Language & Voiceover Options',
+    'Cost-Effective Content Creation',
   ],
   'Motion Video Generation': [
-    'Fluid Motion Animations',
-    'Eye-Catching Visual Effects',
-    'High-Quality Sound Design',
-    'Professional Brand Animation',
-    'Fast Delivery of Revisions',
-    'Creative Concept Execution',
+    'High-Impact 2D/3D Motion Graphics',
+    'Smooth & Dynamic Animations',
+    'Professional Sound Design & Audio',
+    'Captivating Visual Transitions',
+    'Premium Brand Storytelling',
+    'Fast Rendering & Turnaround',
   ],
   'Poster Creation': [
-    'Stunning Graphic Design',
-    'Vibrant Print-Ready Resolution',
-    'Creative Brand Aesthetics',
-    'Perfect Typography & Colors',
-    'Quick Draft Turnaround',
-    'Multiple Format Deliverables',
+    'Eye-Catching & Creative Layouts',
+    'High-Resolution Print & Digital Quality',
+    'Perfectly Aligned Brand Color Palette',
+    'Expressive Typography & Graphics',
+    'Quick Revisions & Fast Delivery',
+    'Versatile Formats for All Platforms',
+  ],
+};
+
+const SERVICE_STANDOUT_OPTIONS: Record<string, string[]> = {
+  'Web Development': [
+    'State-of-the-Art Web Architecture',
+    'Flawless Cross-Browser Compatibility',
+    'High Search Engine (SEO) Visibility',
+    'Intuitive Navigation & User Experience',
+    'Rapid Web Page Load Speeds',
+    'Exceptional Post-Launch Maintenance',
+  ],
+  'Custom Software': [
+    'Complex Business Logic Automation',
+    'High-Performance Database Engine',
+    'Scalable System Architecture',
+    'Zero System Downtime',
+    'Comprehensive Staff Training & Docs',
+    'Tailored Industry Features',
+  ],
+  'Mobile App Development': [
+    'Flawless App Store & Play Store Approval',
+    'Ultra-Smooth Touch Animations',
+    'Minimal Battery & Memory Usage',
+    'Seamless Offline Mode Capabilities',
+    'Biometric & Secure Payment Integration',
+    'Timely App Updates & Maintenance',
+  ],
+  'Digital Marketing': [
+    'Significant Lead & Sales Growth',
+    'Lower Customer Acquisition Cost',
+    'High-Converting Ad Creatives',
+    'In-Depth Weekly Performance Reports',
+    'Data-Driven Campaign Optimization',
+    'Strategic Market Audience Targeting',
+  ],
+  'AI Video Generation': [
+    'Hyper-Realistic AI Voiceover Quality',
+    'Lightning-Fast Video Render Times',
+    'Engaging Social Media Video Formats',
+    'Seamless AI Avatar Synchronization',
+    'Multi-Language Localization',
+    'Unmatched Production Cost Savings',
+  ],
+  'Motion Video Generation': [
+    'Cinema-Grade 3D Motion Graphics',
+    'Fluid & Engaging Animation Timing',
+    'Professional Audio & SFX Mixing',
+    'Custom Brand Visual Style',
+    'High Conversion Explainer Format',
+    'Exceptional Creative Direction',
+  ],
+  'Poster Creation': [
+    'Stunning Visual Hierarchy & Aesthetics',
+    'High-DPI Print Ready Asset Quality',
+    'Unique Creative Graphic Concepts',
+    'Instant Brand Recognition',
+    'Super-Fast Design Revisions',
+    'Multi-Format Social & Banner Export',
+  ],
+};
+
+const SERVICE_TEAM_OPTIONS: Record<string, string[]> = {
+  'Web Development': [
+    'Tech-Savvy Frontend & Backend Engineers',
+    'Creative UI/UX Designers',
+    'Responsive & Clear Communicators',
+    'Proactive Project Managers',
+    'Agile & Efficient Team',
+    'Dedicated Support Engineers',
+  ],
+  'Custom Software': [
+    'Expert Software Architects',
+    'Full-Stack Engineering Team',
+    'Security-Focused Developers',
+    'Agile Scrum Masters',
+    'Detail-Oriented Analysts',
+    '24/7 Dedicated Tech Support',
+  ],
+  'Mobile App Development': [
+    'Skilled iOS & Android Engineers',
+    'Mobile UI/UX Specialists',
+    'QA & Device Testing Experts',
+    'Fast & Responsive Developers',
+    'User-Centric Product Managers',
+    'Reliable Tech Advisors',
+  ],
+  'Digital Marketing': [
+    'Strategic Growth Marketers',
+    'Data-Driven Campaign Specialists',
+    'Creative Content Strategy Team',
+    'Ad Optimization Experts',
+    'Proactive Account Managers',
+    'Transparent Communicators',
+  ],
+  'AI Video Generation': [
+    'Pioneering AI Video Specialists',
+    'Creative Scriptwriters & Editors',
+    'Sound & Voiceover Designers',
+    'Fast-Turnaround Producers',
+    'Innovative Visual Artists',
+    'Responsive Production Managers',
+  ],
+  'Motion Video Generation': [
+    'Master Motion Designers & Animators',
+    'Creative Art Directors',
+    'Professional Sound Engineers',
+    'Detail-Oriented Animators',
+    'Visual Storytellers',
+    'Reliable Project Coordinators',
+  ],
+  'Poster Creation': [
+    'Talented Graphic Designers',
+    'Brand Identity Specialists',
+    'Creative Visual Illustrators',
+    'Fast & Accommodating Designers',
+    'Precision Typesetters',
+    'Responsive Account Leads',
   ],
 };
 
 const DEFAULT_LIKED_OPTIONS = [
-  'Clean UI & Modern Design',
-  'Fast & On-Time Delivery',
-  'Flawless Performance',
-  'Stunning Visuals & Graphics',
+  'State-of-the-Art Technical Execution',
+  'On-Time & On-Budget Delivery',
+  'Exceptional Work Quality & Reliability',
   'Clear & Responsive Communication',
-  'High Quality Output & ROI',
+  'Intuitive Interface & Smooth Workflow',
+  'High Return on Investment (ROI)',
 ];
 
-const STANDOUT_OPTIONS = [
-  'Exceptional Attention to Detail',
-  'Rapid Support & Quick Turnaround',
-  'High-Definition Media Output',
-  'Smooth & Intuitive Experience',
-  'Seamless Delivery Process',
-  'Great Value & Competitive Rates',
+const DEFAULT_STANDOUT_OPTIONS = [
+  'Deep Expertise & Innovation',
+  'Rapid Response & Dedicated Support',
+  'Flawless System & Asset Delivery',
+  'Tailored Features for Our Specific Industry',
+  'Transparent Milestone Tracking & Reports',
+  'Outstanding Support & Revisions',
 ];
 
-const TEAM_TAGS = [
-  'Creative & Innovative',
-  'Professional & Skilled',
-  'Fast Turnaround',
-  'Great Communication',
-  'High Technical Expertise',
-  'Responsive Support',
+const DEFAULT_TEAM_TAGS = [
+  'Innovative & Tech-Driven',
+  'Highly Skilled Engineering & Creative Team',
+  'Fast & Clear Communication',
+  'Dedicated & Customer-Centric',
+  'Reliable & Trustworthy',
+  'Proactive Problem Solvers',
 ];
 
 const FOLLOWUP_OPTIONS = [
-  'Regular progress updates',
-  'Quick & responsive answers',
-  'Smooth revisions',
+  'Regular milestone progress updates',
+  'Quick & responsive technical support',
+  'Smooth revision & enhancement cycles',
   'On-time project delivery',
   'N/A',
 ];
@@ -252,7 +370,9 @@ export const AIReviewWizard: React.FC<AIReviewWizardProps> = ({
       {step === 2 && (
         <div className="space-y-4 animate-fadeIn">
           <div className="space-y-1">
-            <h4 className="text-sm font-bold text-slate-900">2. What did you like about the service or project?</h4>
+            <h4 className="text-sm font-bold text-slate-900">
+              2. What did you like about the {answers.serviceUsed === 'Other' ? (customService.trim() || 'service') : (answers.serviceUsed || 'service')}?
+            </h4>
             <p className="text-xs text-slate-500">Tap options below or write your own details:</p>
           </div>
 
@@ -281,7 +401,7 @@ export const AIReviewWizard: React.FC<AIReviewWizardProps> = ({
             rows={3}
             value={answers.likedExperience}
             onChange={(e) => setAnswers({ ...answers, likedExperience: e.target.value })}
-            placeholder="e.g. Clean UI design, smooth development workflow, and fast delivery of creative assets."
+            placeholder={`e.g. Great quality, fast turnaround, and clear communication throughout our ${answers.serviceUsed === 'Other' ? (customService.trim() || 'project') : answers.serviceUsed} project.`}
             className="w-full bg-white border border-slate-200 rounded-2xl p-3.5 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-600 resize-none"
           />
           <div className="flex items-center justify-between gap-3">
@@ -303,9 +423,11 @@ export const AIReviewWizard: React.FC<AIReviewWizardProps> = ({
       {/* Step 3: How was the team & Follow up */}
       {step === 3 && (
         <div className="space-y-4 animate-fadeIn">
-          <h4 className="text-sm font-bold text-slate-900">3. How was the team? (Select all that apply)</h4>
+          <h4 className="text-sm font-bold text-slate-900">
+            3. How was the team & communication during your {answers.serviceUsed === 'Other' ? (customService.trim() || 'service') : answers.serviceUsed}? (Select all that apply)
+          </h4>
           <div className="flex flex-wrap gap-2">
-            {TEAM_TAGS.map((tag) => {
+            {(SERVICE_TEAM_OPTIONS[answers.serviceUsed] || DEFAULT_TEAM_TAGS).map((tag) => {
               const isSelected = answers.teamKeywords.includes(tag);
               return (
                 <button
@@ -326,7 +448,7 @@ export const AIReviewWizard: React.FC<AIReviewWizardProps> = ({
           </div>
 
           <div className="pt-2 border-t border-slate-100 space-y-2">
-            <label className="block text-xs font-bold text-slate-700">How was the follow-up?</label>
+            <label className="block text-xs font-bold text-slate-700">How was the project follow-up & delivery?</label>
             <div className="flex flex-wrap gap-1.5">
               {FOLLOWUP_OPTIONS.map((opt) => (
                 <button
@@ -360,12 +482,14 @@ export const AIReviewWizard: React.FC<AIReviewWizardProps> = ({
       {step === 4 && (
         <div className="space-y-4 animate-fadeIn">
           <div className="space-y-1">
-            <h4 className="text-sm font-bold text-slate-900">4. What stood out to you?</h4>
+            <h4 className="text-sm font-bold text-slate-900">
+              4. What stood out to you in this {answers.serviceUsed === 'Other' ? (customService.trim() || 'service') : answers.serviceUsed}?
+            </h4>
             <p className="text-xs text-slate-500">Tap options below or write your own details:</p>
           </div>
 
           <div className="flex flex-wrap gap-2">
-            {STANDOUT_OPTIONS.map((opt) => {
+            {(SERVICE_STANDOUT_OPTIONS[answers.serviceUsed] || DEFAULT_STANDOUT_OPTIONS).map((opt) => {
               const isSelected = answers.standoutDetails.includes(opt);
               return (
                 <button
@@ -389,7 +513,7 @@ export const AIReviewWizard: React.FC<AIReviewWizardProps> = ({
             rows={3}
             value={answers.standoutDetails}
             onChange={(e) => setAnswers({ ...answers, standoutDetails: e.target.value })}
-            placeholder="e.g. Outstanding quality in software build, video rendering, and clear communication."
+            placeholder={`e.g. Outstanding execution and high quality results delivered for our ${answers.serviceUsed === 'Other' ? (customService.trim() || 'project') : answers.serviceUsed}.`}
             className="w-full bg-white border border-slate-200 rounded-2xl p-3.5 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-600 resize-none"
           />
           <div className="flex items-center justify-between gap-3">
@@ -406,7 +530,9 @@ export const AIReviewWizard: React.FC<AIReviewWizardProps> = ({
       {/* Step 5: Would you recommend */}
       {step === 5 && (
         <div className="space-y-4 animate-fadeIn">
-          <h4 className="text-sm font-bold text-slate-900">5. Would you recommend them?</h4>
+          <h4 className="text-sm font-bold text-slate-900">
+            5. Would you recommend them for {answers.serviceUsed === 'Other' ? (customService.trim() || 'this service') : answers.serviceUsed}?
+          </h4>
           <div className="flex gap-2">
             {(['Yes', 'Maybe', 'No'] as const).map((opt) => (
               <button
@@ -443,12 +569,14 @@ export const AIReviewWizard: React.FC<AIReviewWizardProps> = ({
       {/* Step 6: Additional comments & Submit */}
       {step === 6 && (
         <div className="space-y-4 animate-fadeIn">
-          <h4 className="text-sm font-bold text-slate-900">6. Additional comments (Optional)</h4>
+          <h4 className="text-sm font-bold text-slate-900">
+            6. Additional comments about your {answers.serviceUsed === 'Other' ? (customService.trim() || 'service') : answers.serviceUsed} experience (Optional)
+          </h4>
           <textarea
             rows={3}
             value={answers.additionalNotes}
             onChange={(e) => setAnswers({ ...answers, additionalNotes: e.target.value })}
-            placeholder="e.g. Highly satisfied with the final deliverables and overall project management!"
+            placeholder={`e.g. Overall highly satisfied with the final deliverables for our ${answers.serviceUsed === 'Other' ? (customService.trim() || 'project') : answers.serviceUsed}!`}
             className="w-full bg-white border border-slate-200 rounded-2xl p-3.5 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-600 resize-none"
           />
 

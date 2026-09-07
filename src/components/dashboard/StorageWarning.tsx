@@ -16,7 +16,7 @@ export const StorageWarning: React.FC = () => {
         </div>
       </div>
       <span className="text-[10px] font-mono font-semibold uppercase bg-emerald-100/90 text-emerald-800 px-2.5 py-1 rounded-lg shrink-0">
-        localStorage (revora_campaigns)
+        localStorage (alphatech_campaigns)
       </span>
     </div>
   );

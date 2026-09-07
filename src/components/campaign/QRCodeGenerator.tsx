@@ -1,7 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import { Button } from '../ui/Button';
-import { Download, Printer, QrCode } from 'lucide-react';
+import { Download, Printer } from 'lucide-react';
+import alphaTechLogo from '../../assets/alpha-tech-logo.png';
 
 export interface QRCodeGeneratorProps {
   url: string;
@@ -14,9 +15,14 @@ export const QRCodeGenerator: React.FC<QRCodeGeneratorProps> = ({
   url,
   businessName,
   logoUrl,
-  brandColor = '#059669',
+  brandColor = '#0D333C',
 }) => {
   const qrRef = useRef<HTMLDivElement>(null);
+  const [imgError, setImgError] = useState(false);
+
+  const isAlphaTech = businessName.toLowerCase().includes('alpha tech');
+  const effectiveLogo = (isAlphaTech || !logoUrl || imgError) ? alphaTechLogo : logoUrl;
+  const centerLogoSrc = effectiveLogo;
 
   const handleDownloadPNG = () => {
     const svgElement = qrRef.current?.querySelector('svg');
@@ -56,16 +62,18 @@ export const QRCodeGenerator: React.FC<QRCodeGeneratorProps> = ({
       {/* Printable Area */}
       <div className="print-qr-area bg-white border border-slate-200/80 rounded-3xl p-6 text-center space-y-4 shadow-sm">
         <div className="space-y-1">
-          {logoUrl ? (
-            <img
-              src={logoUrl}
-              alt={businessName}
-              className="w-12 h-12 mx-auto rounded-xl object-contain bg-slate-50 border border-slate-200 p-1 mb-2"
-              onError={(e) => { (e.target as HTMLElement).style.display = 'none'; }}
-            />
+          {effectiveLogo ? (
+            <div className="w-16 h-16 mx-auto rounded-2xl bg-[#0D333C] p-1.5 shadow-md flex items-center justify-center border border-[#C9A84E]/30 overflow-hidden mb-2">
+              <img
+                src={effectiveLogo}
+                alt={businessName}
+                className="w-full h-full object-contain rounded-xl"
+                onError={() => setImgError(true)}
+              />
+            </div>
           ) : (
             <div
-              className="w-12 h-12 mx-auto rounded-xl flex items-center justify-center text-white font-extrabold text-lg shadow-sm mb-2"
+              className="w-14 h-14 mx-auto rounded-2xl flex items-center justify-center text-white font-extrabold text-lg shadow-sm mb-2"
               style={{ backgroundColor: brandColor }}
             >
               {businessName.substring(0, 2).toUpperCase()}
@@ -77,20 +85,32 @@ export const QRCodeGenerator: React.FC<QRCodeGeneratorProps> = ({
           </p>
         </div>
 
-        {/* QR Code Graphic */}
+        {/* QR Code Graphic with Centered Logo */}
         <div ref={qrRef} className="p-4 bg-white rounded-2xl border-2 border-slate-100 inline-block shadow-inner">
           <QRCodeSVG
             value={url}
-            size={200}
+            size={220}
             bgColor="#FFFFFF"
-            fgColor="#0f172a"
+            fgColor="#0D333C"
             level="H"
             includeMargin={true}
+            imageSettings={
+              centerLogoSrc
+                ? {
+                    src: centerLogoSrc,
+                    x: undefined,
+                    y: undefined,
+                    height: 46,
+                    width: 46,
+                    excavate: true,
+                  }
+                : undefined
+            }
           />
         </div>
 
         <p className="text-[11px] text-slate-400 font-medium">
-          Powered by REVORA Customer Review Assistant
+          Powered by Alpha Tech Review Assistant
         </p>
       </div>
 

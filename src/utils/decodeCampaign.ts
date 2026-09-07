@@ -43,29 +43,26 @@ export function decodeCampaign(encodedData: string): DecodeCampaignResult {
     // Check version
     const version = rawObj.version || 1;
     if (version > 1) {
-      return { success: false, error: 'Campaign created with a newer version of REVORA.' };
+      return { success: false, error: 'Campaign created with a newer version of Alpha Tech Portal.' };
     }
 
     // Validate required fields
-    if (!rawObj.businessName || typeof rawObj.businessName !== 'string') {
-      return { success: false, error: 'Missing business name in campaign data.' };
-    }
-
-    if (!rawObj.googleMapsUrl || typeof rawObj.googleMapsUrl !== 'string') {
-      return { success: false, error: 'Missing Google destination URL in campaign data.' };
-    }
+    const defaultGoogleUrl = 'https://g.page/r/CYCyiDazPsWzEBM/review';
 
     // Construct sanitized Campaign object
     const campaign: CampaignData = {
       version: 1,
       campaignId: rawObj.campaignId || `cmp_${Date.now()}`,
-      businessName: sanitizeString(rawObj.businessName, 100),
+      businessName: sanitizeString(rawObj.businessName || 'Alpha Tech Business Solutions', 100),
       logoUrl: isValidPublicUrl(rawObj.logoUrl) ? rawObj.logoUrl : undefined,
-      location: rawObj.location ? sanitizeString(rawObj.location, 100) : undefined,
-      googleMapsUrl: rawObj.googleMapsUrl.trim(),
-      googleReviewUrl: rawObj.googleReviewUrl ? rawObj.googleReviewUrl.trim() : undefined,
+      location: rawObj.location ? sanitizeString(rawObj.location, 100) : 'Ambalavayal Sulthanbathery, Wayanad, Kerala',
+      clientName: rawObj.clientName ? sanitizeString(rawObj.clientName, 100) : undefined,
+      clientCompany: rawObj.clientCompany ? sanitizeString(rawObj.clientCompany, 100) : undefined,
+      projectNotes: rawObj.projectNotes ? sanitizeString(rawObj.projectNotes, 200) : undefined,
+      googleMapsUrl: (rawObj.googleMapsUrl && typeof rawObj.googleMapsUrl === 'string' && rawObj.googleMapsUrl.trim()) ? rawObj.googleMapsUrl.trim() : defaultGoogleUrl,
+      googleReviewUrl: rawObj.googleReviewUrl ? rawObj.googleReviewUrl.trim() : defaultGoogleUrl,
       googlePlaceId: rawObj.googlePlaceId ? rawObj.googlePlaceId.trim() : undefined,
-      brandColor: isValidHexColor(rawObj.brandColor) ? rawObj.brandColor : '#059669',
+      brandColor: isValidHexColor(rawObj.brandColor) ? rawObj.brandColor : '#0D333C',
       welcomeMessage: sanitizeString(rawObj.welcomeMessage || 'How was your experience?', 150),
       description: rawObj.description ? sanitizeString(rawObj.description, 250) : undefined,
       thankYouMessage: sanitizeString(rawObj.thankYouMessage || 'Thank you for sharing your experience.', 200),

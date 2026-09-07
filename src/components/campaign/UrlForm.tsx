@@ -11,14 +11,16 @@ export interface UrlFormProps {
   onSubmit: (url: string, reviewUrl?: string, placeId?: string) => void;
 }
 
+export const DEFAULT_ALPHA_TECH_REVIEW_URL = 'https://g.page/r/CYCyiDazPsWzEBM/review';
+
 export const UrlForm: React.FC<UrlFormProps> = ({
-  initialUrl,
-  initialReviewUrl = '',
+  initialUrl = DEFAULT_ALPHA_TECH_REVIEW_URL,
+  initialReviewUrl = DEFAULT_ALPHA_TECH_REVIEW_URL,
   initialPlaceId = '',
   onSubmit,
 }) => {
-  const [googleUrl, setGoogleUrl] = useState(initialUrl);
-  const [reviewUrl, setReviewUrl] = useState(initialReviewUrl);
+  const [googleUrl, setGoogleUrl] = useState(initialUrl || DEFAULT_ALPHA_TECH_REVIEW_URL);
+  const [reviewUrl, setReviewUrl] = useState(initialReviewUrl || DEFAULT_ALPHA_TECH_REVIEW_URL);
   const [placeId, setPlaceId] = useState(initialPlaceId);
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [error, setError] = useState('');

@@ -8,6 +8,7 @@ import { QRCodeGenerator } from '../campaign/QRCodeGenerator';
 import { Modal } from '../ui/Modal';
 import { ExternalLink, Copy, Check, QrCode, CopyPlus, Trash2, MapPin, Calendar } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import alphaTechLogo from '../../assets/alpha-tech-logo.png';
 
 export interface CampaignCardProps {
   campaign: CampaignData;
@@ -22,6 +23,7 @@ export const CampaignCard: React.FC<CampaignCardProps> = ({
 }) => {
   const [copied, setCopied] = useState(false);
   const [showQRModal, setShowQRModal] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   const encodedData = encodeCampaign(campaign);
   const campaignUrl = generateCampaignUrl(encodedData);
@@ -41,6 +43,9 @@ export const CampaignCard: React.FC<CampaignCardProps> = ({
     year: 'numeric',
   });
 
+  const isAlphaTech = campaign.businessName?.toLowerCase().includes('alpha tech');
+  const cardLogoSrc = (isAlphaTech || !campaign.logoUrl || imgError) ? alphaTechLogo : campaign.logoUrl;
+
   return (
     <>
       <Card className="flex flex-col justify-between space-y-4 hover:border-emerald-300 transition-all group">
@@ -48,21 +53,12 @@ export const CampaignCard: React.FC<CampaignCardProps> = ({
           {/* Header */}
           <div className="flex items-start justify-between gap-3">
             <div className="flex items-center gap-3">
-              {campaign.logoUrl ? (
-                <img
-                  src={campaign.logoUrl}
-                  alt={campaign.businessName}
-                  className="w-10 h-10 rounded-xl object-contain bg-slate-50 border border-slate-200 p-1"
-                  onError={(e) => { (e.target as HTMLElement).style.display = 'none'; }}
-                />
-              ) : (
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-sm"
-                  style={{ backgroundColor: campaign.brandColor || '#059669' }}
-                >
-                  {campaign.businessName.substring(0, 2).toUpperCase()}
-                </div>
-              )}
+              <img
+                src={cardLogoSrc}
+                alt={campaign.businessName}
+                className="w-10 h-10 rounded-xl object-contain bg-slate-50 border border-slate-200 p-1"
+                onError={() => setImgError(true)}
+              />
               <div>
                 <h3 className="font-extrabold text-slate-900 text-base leading-snug group-hover:text-emerald-700 transition-colors">
                   {campaign.businessName}
@@ -71,6 +67,11 @@ export const CampaignCard: React.FC<CampaignCardProps> = ({
                   <p className="text-xs text-slate-500 flex items-center gap-1">
                     <MapPin className="w-3 h-3 text-slate-400" />
                     <span>{campaign.location}</span>
+                  </p>
+                )}
+                {(campaign.clientName || campaign.clientCompany) && (
+                  <p className="text-[11px] font-medium text-[#0D333C] mt-0.5">
+                    Client: {campaign.clientName || ''}{campaign.clientCompany ? ` (${campaign.clientCompany})` : ''}
                   </p>
                 )}
               </div>

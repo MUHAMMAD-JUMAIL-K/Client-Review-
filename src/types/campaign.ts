@@ -4,6 +4,9 @@ export interface CampaignData {
   businessName: string;
   logoUrl?: string;
   location?: string;
+  clientName?: string;
+  clientCompany?: string;
+  projectNotes?: string;
   googleMapsUrl: string;
   googleReviewUrl?: string;
   googlePlaceId?: string;
@@ -17,6 +20,7 @@ export interface CampaignData {
 export type ColorPreset = {
   name: string;
   hex: string;
+  swatches: string[];
   primaryClass: string;
   borderClass: string;
 };

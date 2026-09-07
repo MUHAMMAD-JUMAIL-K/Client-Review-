@@ -8,34 +8,47 @@ export default {
     extend: {
       colors: {
         brand: {
-          50: '#ecfdf5',
-          100: '#d1fae5',
-          200: '#a7f3d0',
-          300: '#6ee7b7',
-          400: '#34d399',
-          500: '#10b981',
-          600: '#059669', // Primary Deep Emerald
-          700: '#047857',
-          800: '#065f46',
-          900: '#064e3b',
-          950: '#022c22',
+          50: '#F5F7F6',
+          100: '#e1e8e6',
+          200: '#c4d2ce',
+          300: '#99b3ab',
+          400: '#648b80',
+          500: '#164954', // Lighter Teal / Secondary
+          600: '#103942',
+          700: '#0D333C', // Deep Teal / Primary
+          800: '#102A30', // Dark Text
+          900: '#0B272E',
+          950: '#06171B',
         },
+        gold: {
+          300: '#e6c875',
+          400: '#d9b65e',
+          500: '#C9A84E', // Luxury Gold Accent
+          600: '#ab8b39',
+          700: '#876c29',
+        },
+        deepTeal: '#0D333C',
+        lighterTeal: '#164954',
+        luxuryGold: '#C9A84E',
+        darkText: '#102A30',
+        lightBg: '#F5F7F6',
         teal: {
-          500: '#14b8a6',
-          600: '#0d9488',
+          500: '#164954',
+          600: '#0D333C',
         },
         dark: {
-          900: '#0f172a',
-          800: '#1e293b',
-          700: '#334155',
+          900: '#102A30',
+          800: '#0D333C',
+          700: '#164954',
         }
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
       },
       boxShadow: {
-        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.08)',
-        'glow': '0 0 20px rgba(5, 150, 105, 0.25)',
+        'glass': '0 8px 32px 0 rgba(13, 51, 60, 0.08)',
+        'glow': '0 0 25px rgba(201, 168, 78, 0.25)',
+        'gold': '0 4px 20px 0 rgba(201, 168, 78, 0.3)',
       }
     },
   },

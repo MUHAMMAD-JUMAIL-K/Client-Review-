@@ -1,4 +1,4 @@
-const PREFIX = 'revora_';
+const PREFIX = 'alphatech_';
 
 export const storageService = {
   get<T>(key: string, defaultValue: T): T {
@@ -42,7 +42,7 @@ export const storageService = {
       }
       keysToRemove.forEach(k => localStorage.removeItem(k));
     } catch (e) {
-      console.warn('Error clearing REVORA local storage:', e);
+      console.warn('Error clearing Alpha Tech local storage:', e);
     }
   }
 };
