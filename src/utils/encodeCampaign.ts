@@ -31,10 +31,22 @@ export function encodeCampaign(campaign: Omit<CampaignData, 'version'> & { versi
   return encoded;
 }
 
-/**
-  * Generates full shareable URL for customer review page
-  */
 export function generateCampaignUrl(encodedData: string, origin?: string): string {
-  const base = origin || (typeof window !== 'undefined' ? window.location.origin : 'https://revora.app');
-  return `${base}/r/?data=${encodedData}`;
+  const baseUrl = import.meta.env.BASE_URL || '/';
+  const cleanBase = baseUrl.startsWith('/') ? baseUrl : `/${baseUrl}`;
+  const formattedBase = cleanBase.endsWith('/') ? cleanBase : `${cleanBase}/`;
+
+  if (origin) {
+    const cleanOrigin = origin.endsWith('/') ? origin.slice(0, -1) : origin;
+    return `${cleanOrigin}${formattedBase}r/?data=${encodedData}`;
+  }
+
+  if (typeof window !== 'undefined') {
+    const originUrl = window.location.origin.endsWith('/')
+      ? window.location.origin.slice(0, -1)
+      : window.location.origin;
+    return `${originUrl}${formattedBase}r/?data=${encodedData}`;
+  }
+
+  return `https://revora.app${formattedBase}r/?data=${encodedData}`;
 }
